@@ -37,9 +37,14 @@ exports.addAddress = (req, res) => {
       });
     }
   } else {
-    res.status(400).json({ error: "Params address required" });
+    res.status(400).json({ error: "Params Address required" });
   }
 };
+
+
+
+
+
 
 exports.getAddress = (req, res) => {
   UserAddress.findOne({ user: req.user._id }).exec((error, userAddress) => {
