@@ -19,7 +19,7 @@ const orderRoutes=require('./routes/order');
 const addressRoutes=require('./routes/address');
 const adminOrderRoute = require("./routes/admin/orderRoutes");
 
-mongoose.connect('mongodb+srv://tanmoypaul1005:S0vddkqmcVJjpuVS@cluster0.nswkl.mongodb.net/newsapi?retryWrites=true&w=majority')
+mongoose.connect(`mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.nswkl.mongodb.net/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`)
 .then(()=>{
   console.log('Database Connect');
 });
